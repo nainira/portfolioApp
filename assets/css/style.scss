@@ -1,3 +1,5 @@
+//variables
+
 $black: #000;
 $white: #fff;
 $grey: #f7f7f7;
@@ -22,6 +24,32 @@ $break-two: 520px;
 $break-one: 360px;
 
 @import url('http://fonts.googleapis.com/css?family=Lato:300,400,700');
+
+// rotate mixin
+
+@-webkit-keyframes rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+    }
+}
+
+@keyframes rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+        -webkit-transform-origin: center center;
+        -moz-transform-origin: center center;
+        -ms-transform-origin: center center;
+        -o-transform-origin: center center;
+        transform-origin: center center;
+    }
+}
 
 // Utilities
 
@@ -318,8 +346,8 @@ body {
 	@media only screen
 	and (min-width : $break-three) {
 		float: left;
-		width: 75%;
-        margin: 10px 5px 5px 5px;
+		width: 80%;
+//        margin: 10px 5px 5px 5px;
 	}
 
 	// portfolio item style
@@ -397,35 +425,63 @@ body {
 		}
 
 		.portfolio-image {
-			padding: $padding*2;
+			padding: $padding;
 			background: $white;
 
 			text-align: center;
-			margin: 5 auto;
+//			margin: 0 3%;
 
 			/* Desktops and laptops ----------- */
 			@media only screen
 			and (min-width : $break-three) {
+                padding: $padding*2;
 				float: left;
 				width: 60%;
 				margin: 0 auto;
 				border-left: 1px solid darken($grey, 10%);
+                margin: 0 auto;
 			}
 
 			img {
+                padding: 0px;
 				width: 100%;
-				max-width: 620px;
+				max-width: 700px;
 				height: auto;
 			}
 
 			div.loading {
-				color: $darkgrey;
+				color: darken($grey, 20%);
+                position: absolute;
+                width: auto;
+                bottom: 15px;
+                left: 50px;
+                margin-left: 25%;
 				img {
+                    vertical-align: middle;
 					width: auto;
-					height: auto;
+
+                    &.rotate {
+                        -webkit-animation-name: rotate;
+                        -moz-animation-name: rotate;
+                        -o-animation-name: rotate;
+                        animation-name: rotate;
+                        -webkit-animation-duration: 1s;
+                        -moz-animation-duration: 1s;
+                        -o-animation-duration: 1s;
+                        animation-duration: 1s;
+                        -webkit-animation-iteration-count: infinite;
+                        -moz-animation-iteration-count: infinite;
+                        -o-animation-iteration-count: infinite;
+                        animation-iteration-count: infinite;
+                        -webkit-animation-timing-function: linear;
+                        -moz-animation-timing-function: linear;
+                        -o-animation-timing-function: linear;
+                        animation-timing-function: linear;
+
+                    }
 				}
 			}
-		}
+		} // portfolio image style ends here
 
 	}// portfolio item style
 

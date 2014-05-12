@@ -1,4 +1,24 @@
 @import url('http://fonts.googleapis.com/css?family=Lato:300,400,700');
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transform-origin: center center;
+    transform-origin: center center; } }
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transform-origin: center center;
+    -moz-transform-origin: center center;
+    -ms-transform-origin: center center;
+    -o-transform-origin: center center;
+    transform-origin: center center; } }
+
 .group:before, .group:after {
   content: '';
   display: table; }
@@ -184,8 +204,7 @@ body {
   @media only screen and (min-width: 760px) {
     .content {
       float: left;
-      width: 75%;
-      margin: 10px 5px 5px 5px; } }
+      width: 80%; } }
   .content .portfolio-item {
     background: #f7f7f7;
     padding-left: 20px; }
@@ -235,26 +254,50 @@ body {
         .content .portfolio-item .portfolio-info .meta p {
           margin: 0; }
     .content .portfolio-item .portfolio-image {
-      padding: 20px;
+      padding: 10px;
       background: #fff;
       text-align: center;
-      margin: 5 auto;
       /* Desktops and laptops ----------- */ }
       @media only screen and (min-width: 760px) {
         .content .portfolio-item .portfolio-image {
+          padding: 20px;
           float: left;
           width: 60%;
           margin: 0 auto;
-          border-left: 1px solid #dedede; } }
+          border-left: 1px solid #dedede;
+          margin: 0 auto; } }
       .content .portfolio-item .portfolio-image img {
+        padding: 0px;
         width: 100%;
-        max-width: 620px;
+        max-width: 700px;
         height: auto; }
       .content .portfolio-item .portfolio-image div.loading {
-        color: #5e5e5e; }
+        color: #c4c4c4;
+        position: absolute;
+        width: auto;
+        bottom: 15px;
+        left: 50px;
+        margin-left: 25%; }
         .content .portfolio-item .portfolio-image div.loading img {
-          width: auto;
-          height: auto; }
+          vertical-align: middle;
+          width: auto; }
+          .content .portfolio-item .portfolio-image div.loading img.rotate {
+            -webkit-animation-name: rotate;
+            -moz-animation-name: rotate;
+            -o-animation-name: rotate;
+            animation-name: rotate;
+            -webkit-animation-duration: 1s;
+            -moz-animation-duration: 1s;
+            -o-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-iteration-count: infinite;
+            -o-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+            -moz-animation-timing-function: linear;
+            -o-animation-timing-function: linear;
+            animation-timing-function: linear; }
 
 .push {
   height: 0em;
